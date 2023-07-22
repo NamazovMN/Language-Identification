@@ -2,10 +2,11 @@
 ## Goal
 Given text by user prompt or text file 'input_text.txt' in input_data folder (which is generated automatically), language of the text data is detected. For now macro F1 score (0.98) was achieved by Bi-LSTM model.
 ## Model 
-LSTM model along with FCN on the top of it was built for the classification task. If you check [model.py](src/model.py), you can see that model size is dynamic and is defined by user. I will mention how to do it in configuration section, later.
+Bi-LSTM model along with FCN on the top of it was built for the classification task. Model configuration can be found in [model.py](model.py).
+
 ## Dataset
-There is ambiguity about the confidentiality of the dataset, so that I cannot publish. I was provided by this dataset thanks to my academic classes. However I will provide playground techniques that you can check the resulting model.
-## Playground
+Dataset is loaded from [HuggingFace](https://www.huggingface.com). The chosen [dataset](https://huggingface.co/datasets/papluca/language-identification), was splitted into train, validation and test sets which include 70k, 10k, 10k texts and their corresponding labels.
+## 
 In order to test model you can follow the steps that are given: 
 * Initially, you need to pull the project into your local machine; 
 * Them, you should run the following snippet to install all required dependencies: 
