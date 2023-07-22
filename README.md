@@ -34,6 +34,9 @@ In order to test model you can follow the steps that are given:
 # Results:
 Model was trained for 30 epochs and here are results of our model:
 * Loss and accuracy graphs of Train and Validation phases:
-    <p align="center">
- <img src="results/experiment_1/loss_plot.png" width="250" height="200">  <img src="results/experiment_1/accuracy_plot.png" width="250" height="200">
+  <p align="center">
+   <img src="results/experiment_1/loss_plot.png" width="250" height="200">  <img src="results/experiment_1/accuracy_plot.png" width="250" height="200">
  </p>
+
+
+
