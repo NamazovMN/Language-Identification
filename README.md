@@ -63,3 +63,4 @@ Model was trained for 40 epochs and here are results of our model:
     self.plot_graph(list(results['epoch']), list(results['train_accuracy']), list(results['dev_accuracy']),
                       experiment_dir=experiment_dir, type_data='accuracy')
   ```
+* There are two .ipynb files can be found in repository. While one includes all the code for the process ([Language Identification](Language_Identification.ipynb)), the other includes quick way of loading and training and so on ([lang_id](lang_id.ipynb))
