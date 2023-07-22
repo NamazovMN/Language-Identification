@@ -6,7 +6,7 @@ Bi-LSTM model along with FCN on the top of it was built for the classification t
 
 ## Dataset
 Dataset is loaded from [HuggingFace](https://www.huggingface.com). The chosen [dataset](https://huggingface.co/datasets/papluca/language-identification), was splitted into train, validation and test sets which include 70k, 10k, 10k texts and their corresponding labels.
-## 
+## Play around 
 In order to test model you can follow the steps that are given: 
 * Initially, you need to pull the project into your local machine; 
 * Them, you should run the following snippet to install all required dependencies: 
@@ -24,6 +24,5 @@ In order to test model you can follow the steps that are given:
 * with user prompt
     ```python
       python main.py --infer --experiment_num 1
-
-  
+## The best trained model parameters can be found in [drive](drive) link
   
