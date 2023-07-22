@@ -53,6 +53,13 @@ Model was trained for 40 epochs and here are results of our model:
 
 # Further details:
 * In the [statistics.py](statistics.py) because of the typo, when you run the code, accuracy figure will be overwritten on the loss figure. There is quick fix:
+  Before:
   ```python
-      self.plot_graph(list(results['epoch']), list(results['train_accuracy']), list(results['dev_accuracy']),
-                        experiment_dir=experiment_dir, type_data='accuracy')
+    self.plot_graph(list(results['epoch']), list(results['train_accuracy']), list(results['dev_accuracy']),
+                      experiment_dir=experiment_dir, type_data='loss')
+  ```
+  After:
+  ```python
+    self.plot_graph(list(results['epoch']), list(results['train_accuracy']), list(results['dev_accuracy']),
+                      experiment_dir=experiment_dir, type_data='accuracy')
+  ```
