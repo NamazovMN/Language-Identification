@@ -16,11 +16,12 @@ In order to test model you can follow the steps that are given:
   ```python
   python main.py --train --experiment_num 2
 
-* If you want to jump direct to inference section: (Configuration can be seen in [utilities.py](utilities.py).) 
-** with text file input (do not forget add input_text.txt into input_data folder)
+* If you want to jump direct to inference section: (Configuration can be seen in [utilities.py](utilities.py).)
+  
+  ** with text file input (do not forget add input_text.txt into input_data folder)
+      ```python
+      python main.py --infer --experiment_num 1 --from_file
+      
+  ** with user prompt
     ```python
-    python main.py --infer --experiment_num 1 --from_file
-    
-** with user prompt
-  ```python
-    python main.py --infer --experiment_num 1
+      python main.py --infer --experiment_num 1
