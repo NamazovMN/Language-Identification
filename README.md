@@ -35,8 +35,11 @@ In order to test model you can follow the steps that are given:
 Model was trained for 30 epochs and here are results of our model:
 * Loss and accuracy graphs of Train and Validation phases:
   <p align="center">
-   <img src="results/experiment_1/loss_plot.png" width="300" height="250">  <img src="results/experiment_1/accuracy_plot.png" width="300" height="250">
+     <img src="results/experiment_1/loss_plot.png" width="300" height="250">  <img src="results/experiment_1/accuracy_plot.png" width="300" height="250">
  </p>
 
-
+* Confusion Matrix according to the best f1_score 
+    <p align="center">
+     <img src="results/experiment_1/confusion_matrix_f1_score.png" width="400" height="400">
+     </p>
 
