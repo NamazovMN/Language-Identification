@@ -19,7 +19,7 @@ In order to test model you can follow the steps that are given:
 * If you want to jump direct to inference section: (Configuration can be seen in [utilities.py](utilities.py).)
   
   ** with text file input (do not forget add input_text.txt into input_data folder)
-      ```python
+    ```python
       python main.py --infer --experiment_num 1 --from_file
       
   ** with user prompt
