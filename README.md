@@ -24,5 +24,14 @@ In order to test model you can follow the steps that are given:
 * with user prompt
     ```python
       python main.py --infer --experiment_num 1
-## The best trained model parameters can be found in [drive](drive) link
+## Guidelines to load model parameters
+* The best trained model parameters can be found in [model]([drive](https://drive.google.com/file/d/11tzH89_RsxlcDpzmchJGUD-yYa-5OZOn/view?usp=drive_link)https://drive.google.com/file/d/11tzH89_RsxlcDpzmchJGUD-yYa-5OZOn/view?usp=drive_link)  and [optimizer](https://drive.google.com/file/d/11wV0UkyaFCvNTapNOguwnWM3274zhztD/view?usp=sharing) links
+* Download and put it to the specified experiment folder (experiment_1)
+* then execute the following snippet:
+    ```python
+      python main.py --infer --epoch_choice 30
+
+# Results:
+Model was trained for 30 epochs and here are results of our model:
+
   
