@@ -42,4 +42,12 @@ Model was trained for 30 epochs and here are results of our model:
     <p align="center">
      <img src="results/experiment_1/confusion_matrix_f1_score.png" width="400" height="400">
      </p>
+* Confusion Matrix according to the minimal validation loss 
+    <p align="center">
+     <img src="results/experiment_1/confusion_matrix_dev_loss.png" width="400" height="400">
+     </p>
+* Confusion Matrix according to the best validation accuracy 
+    <p align="center">
+     <img src="results/experiment_1/confusion_matrix_dev_accuracy.png" width="400" height="400">
+     </p>
 
