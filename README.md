@@ -51,3 +51,8 @@ Model was trained for 40 epochs and here are results of our model:
      <img src="results/experiment_1/confusion_matrix_dev_accuracy.png" width="400" height="400">
      </p>
 
+# Further details:
+* In the [statistics.py](statistics.py) because of the typo, when you run the code, accuracy figure will be overwritten on the loss figure. There is quick fix:
+  ```python
+      self.plot_graph(list(results['epoch']), list(results['train_accuracy']), list(results['dev_accuracy']),
+                        experiment_dir=experiment_dir, type_data='accuracy')
