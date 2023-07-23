@@ -53,6 +53,7 @@ Model was trained for 40 epochs and here are results of our model:
 
 # Further details:
 * In the [statistics.py](src/statistics.py) because of the typo, when you run the code, accuracy figure will be overwritten on the loss figure. There is quick fix:
+
   Before:
   ```python
     self.plot_graph(list(results['epoch']), list(results['train_accuracy']), list(results['dev_accuracy']),
@@ -63,7 +64,8 @@ Model was trained for 40 epochs and here are results of our model:
     self.plot_graph(list(results['epoch']), list(results['train_accuracy']), list(results['dev_accuracy']),
                       experiment_dir=experiment_dir, type_data='accuracy')
   ```
-* Another change must have been made in the [src/main.py](src/main.py). While we call inference object, best choice argument was sent to the object in incorrect way. So that running inference will not work. Thus you can see the change as follows (pay attention to the **choice** parameter:
+* Another change must have been made in the [src/main.py](src/main.py). While we call inference object, best choice argument was sent to the object in incorrect way. So that running inference will not work. Thus you can see the change as follows (pay attention to the **choice** parameter):
+  
   Before:
   ```python
     inference = Inference(
