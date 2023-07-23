@@ -2,7 +2,7 @@
 ## Goal
 Given text by user prompt or text file 'input_text.txt' in input_data folder (which is generated automatically), language of the text data is detected. For now macro F1 score (0.98) was achieved by Bi-LSTM model.
 ## Model 
-Bi-LSTM model along with FCN on the top of it was built for the classification task. Model configuration can be found in [model.py](model.py).
+Bi-LSTM model along with FCN on the top of it was built for the classification task. Model configuration can be found in [model.py](src/model.py).
 
 ## Dataset
 Dataset is loaded from [HuggingFace](https://www.huggingface.com). The chosen [dataset](https://huggingface.co/datasets/papluca/language-identification), was splitted into train, validation and test sets which include 70k, 10k, 10k texts and their corresponding labels.
@@ -12,11 +12,11 @@ In order to test model you can follow the steps that are given:
 * Them, you should run the following snippet to install all required dependencies: 
   ```python
   python main.py -r requirements.txt
-* If you want to train the model, the following snippet will be enough to run the best configuration that we got. (Configuration can be seen in [utilities.py](utilities.py).) 
+* If you want to train the model, the following snippet will be enough to run the best configuration that we got. (Configuration can be seen in [utilities.py](src/utilities.py).) 
   ```python
   python main.py --train --experiment_num 2
 
-* If you want to jump direct to inference section: (Configuration can be seen in [utilities.py](utilities.py).)
+* If you want to jump direct to inference section: (Configuration can be seen in [utilities.py](src/utilities.py).)
   
 * with text file input (do not forget add input_text.txt into input_data folder)
     ```python
@@ -52,7 +52,7 @@ Model was trained for 40 epochs and here are results of our model:
      </p>
 
 # Further details:
-* In the [statistics.py](statistics.py) because of the typo, when you run the code, accuracy figure will be overwritten on the loss figure. There is quick fix:
+* In the [statistics.py](src/statistics.py) because of the typo, when you run the code, accuracy figure will be overwritten on the loss figure. There is quick fix:
   Before:
   ```python
     self.plot_graph(list(results['epoch']), list(results['train_accuracy']), list(results['dev_accuracy']),
@@ -62,5 +62,30 @@ Model was trained for 40 epochs and here are results of our model:
   ```python
     self.plot_graph(list(results['epoch']), list(results['train_accuracy']), list(results['dev_accuracy']),
                       experiment_dir=experiment_dir, type_data='accuracy')
+  ```
+* Another change must have been made in the [src/main.py](src/main.py). While we call inference object, best choice argument was sent to the object in incorrect way. So that running inference will not work. Thus you can see the change as follows (pay attention to the **choice** parameter:
+  Before:
+  ```python
+    inference = Inference(
+            experiment_num=exp_num,
+            device=device,
+            input_dir=input_dir,
+            choice_prompt=project_parameters['from_file'],
+            load_best=project_parameters['load_best'],
+            choice=project_parameters['choice'],
+            epoch_choice=project_parameters['epoch_choice'],
+        )
+  ```
+  After:
+  ```python
+    inference = Inference(
+            experiment_num=exp_num,
+            device=device,
+            input_dir=input_dir,
+            choice_prompt=project_parameters['from_file'],
+            load_best=project_parameters['load_best'],
+            choice=project_parameters['load_choice'],
+            epoch_choice=project_parameters['epoch_choice'],
+        )
   ```
 * There are two .ipynb files can be found in repository. While one includes all the code for the process ([Language Identification](Language_Identification.ipynb)), the other includes quick way of loading and training and so on ([lang_id](lang_id.ipynb))
